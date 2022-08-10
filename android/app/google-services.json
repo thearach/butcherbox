@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "977622930646",
+    "project_id": "butcherboxng",
+    "storage_bucket": "butcherboxng.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:977622930646:android:778f25569cfe326a0f2577",
+        "android_client_info": {
+          "package_name": "sampleapp.butcherbox"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "977622930646-c4aq4se09bjbunl1t79eog8fscvei8rb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "sampleapp.butcherbox",
+            "certificate_hash": "b20191afe6542d2b7beca3ed601081b3fb620d10"
+          }
+        },
+        {
+          "client_id": "977622930646-sk1sidd3685nk1u7tj32d9sttcn29tmn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKvZmxP1ol3ew13BrsAH_Dqn-nd_guOs4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "977622930646-sk1sidd3685nk1u7tj32d9sttcn29tmn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
