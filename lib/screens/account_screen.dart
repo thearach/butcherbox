@@ -98,6 +98,23 @@ class AccountScreen extends StatelessWidget {
                   headOption: 'Logout',
                   subOption: 'Sign out of app',
                   iconPlace: Icons.logout),
+              AccountOptions(
+                  enter: () {
+                    Navigator.of(context, rootNavigator: true)
+                        .pushNamed('/orders2');
+                    // Navigator.of(context).push(
+                    //   MaterialPageRoute(
+                    //     builder: (BuildContext context) => Provider<Database>(
+                    //       builder: (context, child) => Orders(),
+                    //       create: (context) => FireStoreDatabase(uid: user.uid),
+                    //     ),
+                    //   ),
+                    // );
+                  },
+                  headOption: 'Orders',
+                  subOption: 'List of all your orders',
+                  iconPlace: Icons.my_library_books),
+              SizedBox(height: 5),
             ],
           ),
         ],

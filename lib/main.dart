@@ -7,6 +7,7 @@ import 'package:butcherbox/screens/home.dart';
 import 'package:butcherbox/screens/landing_page.dart';
 import 'package:butcherbox/screens/locations.dart';
 import 'package:butcherbox/screens/orders.dart';
+import 'package:butcherbox/screens/orders2.dart';
 import 'package:butcherbox/screens/sign_in_page.dart';
 import 'package:butcherbox/screens/signing_in.dart';
 import 'package:butcherbox/screens/store_screen.dart';
@@ -57,6 +58,7 @@ class MainApp extends StatelessWidget {
           '/cart': (context) => Cart(_cart, sum),
           '/account': (context) => AccountScreen(),
           '/orders': (context) => Orders(),
+          '/orders2': (context) => Orders2(),
           '/accountinfo': (context) => AccountInfo(),
           '/locations': (context) => Locations(),
         },

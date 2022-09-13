@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 class FireStoreService {
   FireStoreService._();
   static final instance = FireStoreService._();
+
   Future<void> setData({String path, Map<String, dynamic> data}) async {
     final reference = FirebaseFirestore.instance.doc(path);
     print('$path: $data');
@@ -21,5 +22,13 @@ class FireStoreService {
           (snapshot) => builder(snapshot.data()),
         )
         .toList());
+  }
+
+  Stream<QuerySnapshot<Map<String, dynamic>>> getCollectionStream({
+    @required String path,
+  }) {
+    final reference = FirebaseFirestore.instance.collection(path);
+    final snapshots = reference.snapshots();
+    return snapshots;
   }
 }

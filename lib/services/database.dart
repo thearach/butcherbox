@@ -7,6 +7,7 @@ import 'package:butcherbox/services/firestore_service.dart';
 abstract class Database {
   Future<void> createOrder(Order order);
   Stream<List<Order>> ordersStream();
+  Stream getOrdersStream();
 }
 
 class FireStoreDatabase implements Database {
@@ -22,5 +23,7 @@ class FireStoreDatabase implements Database {
 
   Stream<List<Order>> ordersStream() => _service.collectionStream(
       path: APIPath.orders(uid), builder: (data) => Order.fromMap(data));
-  //builder: (data) => Order.fr);
+
+  Stream getOrdersStream() =>
+      _service.getCollectionStream(path: APIPath.orders(uid));
 }
