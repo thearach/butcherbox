@@ -41,7 +41,7 @@ class Checkout extends StatelessWidget {
             location: 'Magodo',
             price: sum,
             orderId: orderId,
-            time: DateTime.now()));
+            time: Timestamp.now()));
         if (_cart.isNotEmpty) {
           // Navigator.push(context,
           //     MaterialPageRoute(builder: (context) => Checkout(_cart)));

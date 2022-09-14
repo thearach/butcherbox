@@ -34,7 +34,8 @@ class TheCheckout extends StatelessWidget {
             location: location,
             price: sum,
             orderId: orderId,
-            time: DateTime.now()));
+            time: Timestamp.now()
+        ));
         if (store.cart.isNotEmpty) {
           Navigator.of(context, rootNavigator: true)
               .push(MaterialPageRoute(builder: (context) => Thanks()));

@@ -24,16 +24,7 @@ class _Orders2State extends State<Orders2> {
           style: TextStyle(color: Colors.green[900]),
         ),
       ),
-      body: StreamBuilder(
-        stream: database.getOrdersStream(),
-        builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
-          if (!snapshot.hasData) {
-            return Center(
-              child: CircularProgressIndicator(),
-            );
-          }
-        },
-      ),
+      body: StreamBuilder(),
     );
   }
 }

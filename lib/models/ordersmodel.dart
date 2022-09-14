@@ -1,4 +1,5 @@
 import 'package:butcherbox/models/productsModel.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:meta/meta.dart';
 
 class Order {
@@ -15,7 +16,8 @@ class Order {
   //final Map theItems;
   final String location;
   final int orderId;
-  final DateTime time;
+  //final DateTime time;
+  final Timestamp time;
   final int price;
 
   factory Order.fromMap(Map<String, dynamic> data) {
@@ -28,7 +30,8 @@ class Order {
     final String location = data['location'];
     final int price = data['price'];
     final int orderId = data['orderId'];
-    final DateTime time = data['time'];
+    //final DateTime time = data['time'];
+    final Timestamp time = data['time'];
 
     return Order(
       items: items,
