@@ -26,16 +26,11 @@ class TheCheckout extends StatelessWidget {
       try {
         final database = Provider.of<Database>(context, listen: false);
         await database.createOrder(Order(
-            // items: [
-            //   {'item': 'ButcherBox Mini pack', 'quantity': 2, 'Price': 1800},
-            //   {'item': 'ButcherBox Combo pack', 'quantity': 4, 'Price': 4000},
-            // ],
             items: store.cart,
             location: location,
             price: sum,
             orderId: orderId,
-            time: Timestamp.now()
-        ));
+            time: Timestamp.now()));
         if (store.cart.isNotEmpty) {
           Navigator.of(context, rootNavigator: true)
               .push(MaterialPageRoute(builder: (context) => Thanks()));

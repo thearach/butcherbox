@@ -1,3 +1,4 @@
+import 'package:butcherbox/butch_widgets/order_list_tile.dart';
 import 'package:butcherbox/models/ordersmodel.dart';
 import 'package:butcherbox/services/database.dart';
 import 'package:flutter/material.dart';
@@ -29,8 +30,10 @@ class Orders extends StatelessWidget {
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             final orders = snapshot.data;
+            // final children =
+            // orders.map((order) => Text(order.location)).toList();
             final children =
-                orders.map((order) => Text(order.location)).toList();
+                orders.map((order) => OrderListTile(order: order)).toList();
             return ListView(children: children);
           }
           if (snapshot.hasError) {
@@ -40,4 +43,3 @@ class Orders extends StatelessWidget {
         });
   }
 }
-//orders.map((order) => Text('${order.price}')).toList();

@@ -21,4 +21,8 @@ class ProductsModel {
   Map<String, dynamic> toJson() {
     return {'name': name, 'quantity': quantity, 'price': totalPrice};
   }
+
+  Map<String, dynamic> fromJson() {
+    return {'name': name, 'quantity': quantity, 'price': totalPrice};
+  }
 }

@@ -26,7 +26,15 @@ class Order {
     }
     //final List<Map> items = data['items'];
     final List<ProductsModel> items = data['items'];
+    // final List<ProductsModel> items = List<ProductsModel>.from(data['items'])
+    //     .map((e) => e.fromJson())
+    //     .cast<ProductsModel>()
+    //     .toList();
     //final Map theItems = data['items'];
+    // final List<ProductsModel> items = List<ProductsModel>.from(data['items'])
+    //     .map((e) => e.toJson())
+    //     .cast<ProductsModel>()
+    //     .toList();
     final String location = data['location'];
     final int price = data['price'];
     final int orderId = data['orderId'];

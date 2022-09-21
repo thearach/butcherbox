@@ -23,12 +23,4 @@ class FireStoreService {
         )
         .toList());
   }
-
-  Stream<QuerySnapshot<Map<String, dynamic>>> getCollectionStream({
-    @required String path,
-  }) {
-    final reference = FirebaseFirestore.instance.collection(path);
-    final snapshots = reference.snapshots();
-    return snapshots;
-  }
 }
