@@ -1,4 +1,5 @@
 import 'package:butcherbox/butch_widgets/order_list_tile.dart';
+import 'package:butcherbox/butch_widgets/showExceptionAlertDialog.dart';
 import 'package:butcherbox/models/ordersmodel.dart';
 import 'package:butcherbox/services/database.dart';
 import 'package:flutter/material.dart';
@@ -36,9 +37,13 @@ class Orders extends StatelessWidget {
                 orders.map((order) => OrderListTile(order: order)).toList();
             return ListView(children: children);
           }
-          if (snapshot.hasError) {
-            return Center(child: Text('Some Error Occurred'));
-          }
+          if (snapshot.hasError)
+            try {
+              return Center(child: Text('Some Error Occurred'));
+            } on FirebaseException catch (e) {
+              showExceptionAlertDialog(context,
+                  title: 'Operation Failed', exception: e);
+            }
           return Center(child: CircularProgressIndicator());
         });
   }

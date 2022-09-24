@@ -17,10 +17,11 @@ class FireStoreDatabase implements Database {
 
   Future<void> createOrder(Order order) => _service.setData(
         //path: APIPath.order(uid, 'orderdetails'), data: order.toMap());
-        path: APIPath.order(uid, docFromId()),
+        path: APIPath.order(uid, order.id),
         data: order.toMap(),
       );
 
   Stream<List<Order>> ordersStream() => _service.collectionStream(
-      path: APIPath.orders(uid), builder: (data) => Order.fromMap(data));
+      path: APIPath.orders(uid),
+      builder: (data, documentID) => Order.fromMap(data, documentID));
 }

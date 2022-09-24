@@ -6,12 +6,14 @@ class Order {
   Order(
       {@required this.items,
       //this.theItems,
+      @required this.id,
       this.location,
       this.orderId,
       this.time,
       @required this.price});
 
   final List<ProductsModel> items;
+  final String id;
   //final List<Map> items;
   //final Map theItems;
   final String location;
@@ -20,12 +22,13 @@ class Order {
   final Timestamp time;
   final int price;
 
-  factory Order.fromMap(Map<String, dynamic> data) {
+  factory Order.fromMap(Map<String, dynamic> data, String documentID) {
     if (data == null) {
       return null;
     }
     //final List<Map> items = data['items'];
-    final List<ProductsModel> items = data['items'];
+    //final List<ProductsModel> items = data['items'];
+    final List<ProductsModel> items = [];
     // final List<ProductsModel> items = List<ProductsModel>.from(data['items'])
     //     .map((e) => e.fromJson())
     //     .cast<ProductsModel>()
@@ -43,6 +46,7 @@ class Order {
 
     return Order(
       items: items,
+      id: documentID,
       //theItems: theItems,
       location: location,
       price: price,

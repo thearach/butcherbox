@@ -25,9 +25,9 @@ class OrderListTile extends StatelessWidget {
       //       fontSize: 16, fontWeight: FontWeight.bold, color: Colors.red),
       // ),
       subtitle: ListView.builder(
-          //itemCount: order.items.length,
+          itemCount: order.items.length,
           //itemCount: order.items?.length ?? 0,
-          itemCount: (order.items == null) ? 0 : order.items.length,
+          //itemCount: (order.items == null) ? 0 : order.items.length,
           shrinkWrap: true,
           itemBuilder: (context, i) {
             return Expanded(
